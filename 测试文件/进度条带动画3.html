@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body .inner-therm span{
+				color: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="progress">
+                                <div id="plan_neishen"><div class="therm outer-therm" style="width:256px;height:20px;background:rgba(91,192,222,0.3)"><div class="therm inner-therm short page2_color" style="height: 20px; width: 60%; background: rgb(91, 192, 222);"></div><span style="display: block; padding: 0px 10px;">60%</span></div><style></style></div>
+                            </div>
+	</body>
+</html>
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jqmeter.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+        $('#plan_neishen').jQMeter({
+            goal: '$100',
+            raised: '$60',//进度的控制
+            width: '256px',
+            height: '20px',
+            margin: '0 auto',
+            bgColor: "rgba(91,192,222,0.3)",
+            barColor: "rgb(91,192,222)",
+        });
+
+</script>

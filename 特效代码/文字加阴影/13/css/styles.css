@@ -1,0 +1,71 @@
+body{
+	background: #494A5F;
+	color: #D5D6E2;
+	font-weight: 500;
+	font-size: 1.05em;
+	font-family: "Microsoft YaHei","ËÎÌו","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+}
+a{color: #2fa0ec;text-decoration: none;outline: none;}
+a:hover,a:focus{color:#74777b;}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container:before, footer:before, .longshadow:before, .container:after, footer:after, .longshadow:after {
+    content: "";
+    display: table;
+}
+.container:after, footer:after, .longshadow:after {
+    clear: both;
+}
+.container {
+    max-width: 900px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.longshadow {
+    padding: 0;
+}
+.longshadow li {
+    display: inline-block;
+}
+.longshadow li>figure {
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    margin: 5px;
+    overflow: hidden;
+}
+.longshadow li:nth-child(1) figure {
+    background-color: #e96b5e;
+}
+.longshadow li:nth-child(2) figure {
+    background-color: #fbbc85;
+}
+.longshadow li:nth-child(3) figure {
+    background-color: #c3d377;
+}
+.longshadow li:nth-child(4) figure {
+    background-color: #5ea4a4;
+}
+.longshadow li:nth-child(5) figure {
+    background-color: #6dd7b5;
+}
+.longshadow li:nth-child(6) figure {
+    background-color: #8787c4;
+}
+.longshadow span {
+    color: #ffe6d4;
+    font-size: 91px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+

@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>css实现tooltips框的三角角标</title>
+    <meta charset="utf-8" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            display:inline-block;
+        }
+        .tooltips1,
+        .tooltips2,
+        .tooltips3 {
+            width: 200px;
+            height: 80px;
+            background: #fbfbfb;
+            border: 1px solid #d5d5d5;
+            border-radius: 10px;
+            margin: 50px;
+            position: relative;
+        }
+
+            .tooltips1:after {
+                position: absolute;
+                left: -18px;
+                top: 20px;
+                border-left: 9px solid transparent;
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+                border-right: 9px solid #fbfbfb;
+                content: '';
+            }
+
+            .tooltips1:before {
+                position: absolute;
+                left: -19px;
+                top: 20px;
+                border-left: 9px solid transparent;
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+                border-right: 9px solid #d5d5d5;
+                content: " ";
+                display: block;
+                width: 0;
+                height: 0;
+            }
+
+            .tooltips2:after {
+                position: absolute;
+                right: -18px;
+                top: 20px;
+                border-left: 9px solid #fbfbfb;
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+                border-right: 9px solid transparent;
+                content: '';
+            }
+
+            .tooltips2:before {
+                content: " ";
+                display: block;
+                width: 0;
+                height: 0;
+                position: absolute;
+                right: -19px;
+                top: 20px;
+                border-left: 9px solid #d5d5d5;
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+                border-right: 9px solid transparent;
+            }
+
+            .tooltips3:before {
+                transform: rotate(45deg);
+                content: " ";
+                display: block;
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                left: 20px;
+                top: -6px;
+                background: #fbfbfb;
+                border-left: 1px solid #d5d5d5;
+                border-top: 1px solid #d5d5d5;
+            }
+
+        .tooltips {
+            width: 200px;
+            height: 80px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 50px;
+            position: relative;
+            box-shadow: rgba(0,0,0,0.2) 0px 0px 10px;
+            padding:10px;
+        }
+        .tooltips:before {
+            transform: rotate(45deg);
+            content: " ";
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background: #fff;
+            /*right: 30px;
+            top: -5px;
+            box-shadow: #d4d4d4 -1px -1px 5px;*/
+        }
+            
+        .tooltips:after {
+            content: " ";
+            display: block;
+            width: 16px;
+            height: 7px;
+            position: absolute;
+            /*right: 27px;
+            top: 0px;*/
+            background: #fff;
+        }   
+        /*top*/
+        .tooltips.top:before{
+            right: 30px;
+            top: -5px;
+            box-shadow: #d4d4d4 -1px -1px 5px;
+        }
+        .tooltips.top:after{
+            right: 27px;
+            top: 0px;
+        }
+        /*bottom*/
+        .tooltips.bottom:before{
+            right: 30px;
+            bottom: -5px;
+            box-shadow: #d4d4d4 1px 1px 5px;
+        }
+        .tooltips.bottom:after{
+            right: 27px;
+            bottom: 0px;
+        }
+        /*left*/
+        .tooltips.left:before{
+            left: -5px;
+            top: 20px;
+            box-shadow: #d4d4d4  -1px 1px 5px;
+        }
+        .tooltips.left:after{
+            width: 7px;
+            height: 16px;
+            left: 0;
+            top: 17px;
+        }
+        /*right*/
+        .tooltips.right:before{
+            right: -5px;
+            top: 20px;
+            box-shadow: #d4d4d4 1px -1px 5px;
+        }
+        .tooltips.right:after{
+            width: 7px;
+            height: 16px;
+            right: 0;
+            top: 17px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tooltips1"></div>
+    <div class="tooltips2"></div>
+    <div class="tooltips3"></div>
+
+    <br />
+
+    <div class="tooltips top">人之初 性本善 性相近 习相远</div>
+    <div class="tooltips bottom">人之初 性本善 性相近 习相远</div>
+    <div class="tooltips left">人之初 性本善 性相近 习相远</div>
+    <div class="tooltips right">人之初 性本善 性相近 习相远</div>
+</body>
+</html>

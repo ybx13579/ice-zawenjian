@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+            margin: 20px;
+            list-style: none;
+            /*background: url(//icons8.com/preloaders/img/home-loaders.svg) left top no-repeat transparent;*/
+            background: url('images/loading-group.png') left top no-repeat transparent;
+            animation: spinner_rotate_back 2s linear infinite;
+        }
+
+        @keyframes spinner_rotate_back {
+            0% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        li.load_1{
+            background-position:0 0;
+        }
+        li.load_2{
+            background-position:-192px 0;
+        }
+        li.load_3{
+            background-position:-256px 0;
+        }
+        li.load_4{
+            background-position:-320px 0;
+        }
+        li.load_5{
+            background-position:-64px 0;
+        }
+        li.load_6{
+            background-position:-384px 0;
+        }
+        li.load_7{
+            background-position:-448px 0;
+        }
+        li.load_8{
+            background-position:-512px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="load_1"></li>
+        <li class="load_2"></li>
+        <li class="load_3"></li>
+        <li class="load_4"></li>
+        <li class="load_5"></li>
+        <li class="load_6"></li>
+        <li class="load_7"></li>
+        <li class="load_8"></li>
+    </ul>
+</body>
+</html>

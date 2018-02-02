@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<meta charset="utf-8" />
+
+	<body>
+
+		<a href="####" id="link">点我两次分别执行两个不同的操作</a>
+
+		<script>
+			window.onload = function() {
+				var obj = document.getElementById("link"); //获取被点击元素句柄
+				var num = 0; //设置计数器变量，默认为0，下面将在点击后把它设为1，再点又设为0
+
+				//obj对象被点击
+				obj.onclick = function(event) {
+					if(num == 0) {
+						num = 1; //如果计数器为0，则改为1
+						A(); //第1次点击，调用函数A
+					} else if(num == 1) {
+						num = 0; //如果计数器为1，则改为0
+						B(); //第2次点击，调用函数B
+					}
+				}
+
+				obj.addEventListener("click", funcNum, false); //监听点击事件
+			}
+
+			function A() {
+				var obj = document.getElementById("link"); //获取被点击元素句柄
+				obj.style.color = "red";
+				alert("执行事件A\n把字体设置为红色");
+			}
+
+			function B() {
+				var obj = document.getElementById("link"); //获取被点击元素句柄
+				obj.style.color = "blue";
+				alert("执行事件B\n把字体设置为蓝色");
+			}
+		</script>
+
+	</body>
+
+</html>

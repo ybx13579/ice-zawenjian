@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .ot{
+            width:300px;
+            margin:30px auto;
+            background:#ebebeb;
+            overflow:hidden;
+        }
+        .box{
+            /*animation: myfirst 2s;*/
+            animation-fill-mode:forwards ;
+        }
+        @keyframes myfirst
+        {
+            from {height: 252px;}
+            to {height: 0;}
+        }
+        
+        @keyframes myfirst2
+        {
+            from {height: 0;}
+            to {height: 252px;}
+        }
+        .btn2{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="ot">
+        <div>
+            <p>什么什么<button class="btn1"> ↑ </button><button class="btn2"> ↓ </button></p>
+        </div>
+        <div class="box">
+            习近平总书记在党的十九大报告中指出，要坚持以人民为中心，践行全心全意为人民服务的根本宗旨，强调转变政府职能，深化简政放权，创新监管方式，增强政府公信力和执行力，建设人民满意的服务型政府。李克强总理对《普查报告》作出重要批示，强调建立政务大厅是转变政府职能、方便企业和群众的积极探索，要不断完善，下一步要结合行政体制改革的深化，加快推进“互联网+政务服务”，着力打通信息孤岛，融合线上线下，线上能办的就不要再让企业和群众跑腿。
+        </div>
+    </div>
+    
+
+</body>
+</html>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+    $(function () {
+        $("button.btn1").on("click", function () {
+            $(".btn2").show();
+            $(".btn1").hide();
+            $(".box").css({ "animation": "myfirst 2s", "animation-fill-mode": "forwards" })
+        })
+        $("button.btn2").on("click", function () {
+            $(".btn2").hide();
+            $(".btn1").show();
+            $(".box").css({ "animation": "myfirst2 2s", "animation-fill-mode": "forwards" })
+        })
+    })
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset=UTF-8>
+    <title>YuGiOh</title>
+    <style type="text/css">
+    	*{
+    		margin:0;
+    		padding:0;	
+    	}
+        #div {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 90px;
+}
+    </style>
+    <script type="text/javascript">
+        var deg = 0;
+        var rotateHTML5 = function(limit) {
+            deg += limit;
+            deg = deg > 360 ? 1 : deg;
+            div.style['transform'] = div.style['-webkit-transform'] = 'rotate(' + deg + 'deg)';
+        }
+        var rotateIE = function(obj) {
+            var d = !! obj.d ? obj.d : 1;
+            var r = d * Math.PI / 180;
+            costheta = Math.cos(r);
+            sintheta = Math.sin(r);
+            obj.style.filter = "progid:DXImageTransform.Microsoft.Matrix()";
+            var item = obj.filters.item(0);
+            var width = obj.clientWidth;
+            var height = obj.clientHeight;
+            item.DX = -width / 2 * costheta + height / 2 * sintheta + width / 2;
+            item.DY = -width / 2 * sintheta - height / 2 * costheta + height / 2;
+            item.M11 = costheta;
+            item.M12 = -sintheta;
+            item.M21 = sintheta;
+            item.M22 = costheta;
+            obj.timer = setTimeout(function() {
+                var dx = d + 1;
+                dx = dx > 360 ? 1 : dx;
+                obj.d = dx;
+                rotateIE(obj);
+            }, 30);
+        };
+        var start = function() {
+            if (!/.*MSIE.*/i.test(navigator.userAgent)) {
+                if ( !! div.interval) {
+                    clearInterval(div.interval);
+                    div.interval = null;
+                } else {
+                    div.interval = setInterval(function() {
+                        rotateHTML5(1);
+                    }, 30);
+                }
+            } else {
+                if ( !! div.timer) {
+                    clearTimeout(div.timer);
+                    div.timer = null;
+                } else {
+                    rotateIE(div);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="start();">rotate</button>
+    <div id="div">ROTATE</div>
+</body>
+
+</html>

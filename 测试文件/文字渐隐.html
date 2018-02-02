@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: #fff;
+			}
+			
+			.box{
+				width: 600px;
+				height: 35px;
+				overflow: hidden;
+				position: relative;
+			}
+			.text-gradient {
+				display: inline-block;
+				width: 160px;
+				height: 200px;
+				background-color: rgba(255, 255, 255, 0.4);
+				background-image: -webkit-linear-gradient(left, rgba(255,255,255, 0) 0%, rgba(255,255,255,1) 100%);
+				/*background-image: -moz-linear-gradient(right, rgba(0,0,0, 0) 0%, rgba(0,0,0, 1) 100%);
+				background-image: -o-linear-gradient(right, rgba(0,0,0, 0) 0%, rgba(0,0,0, 1) 100%);
+				background-image: linear-gradient(right, rgba(0,0,0, 0) 0%, rgba(0,0,0, 1) 100%);*/
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 1;
+			}
+			
+			#txt {
+				position: absolute;
+				left: 0;
+				top: 0;
+				font-size: 24px;
+				color: red;
+				font-family: 微软雅黑;
+				font-weight: 900;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<body>
+			<div class="box">
+				<div class="text-gradient">
+				</div>
+
+				<div id="txt">
+					这一段字很长，会逐渐隐藏掉一部分。这一段字很长，会逐渐隐藏掉一部分
+				</div>
+			</div>
+
+		</body>
+
+</html>
+
+</html>
