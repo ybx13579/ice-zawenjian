@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        table{
+
+        }
+        table th,
+        table td{
+            border:1px solid #bfbfbf;
+            padding:0 10px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <table id="test_ot">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>{{name}}</td>
+            <td>{{age}}</td>
+        </tr>
+    </table>
+    <div>
+        
+    </div>
+</body>
+</html>
+<script src="vue.js-v2.5.9.js"></script>
+<script>
+    var test = new Vue({
+        el: '#test_ot',
+        data: {
+            name: '光头强',
+            age:'32'
+        }
+    })
+</script>
+
+
+
+
+
+
+

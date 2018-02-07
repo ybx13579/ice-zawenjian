@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+</head>
+<body>
+  <div class="container" id="app">
+    <form>
+      <div class="form-group"> 
+        <label for="username">用户名：</label>
+        <input type="text" class="form-control" id="username" placeholder="请输入用户名" v-model='name' />
+      </div>
+      <div class="form-group">
+        <label for="age">年龄</label>
+        <input type="number" class="form-control" id="age" placeholder="请输入年龄" />
+      </div>
+      <button type="button" class="btn btn-info btn-sm" v-on:click='add()'>添加</button>
+      <button type="button" class="btn btn-info btn-sm">重置</button>
+    </form>
+    <hr>
+    <table class="table table-border table-hover">
+      <tr>
+        <th>序号</th>
+        <th>名称</th>
+        <th>年龄</th>
+        <th>操作</th>
+      </tr>
+      <tr v-for="(k,v,i) in arr">
+        <td>{{i+1}}</td>
+        <td>{{k}}</td>
+        <td>{{v}}</td>
+        <td><button type="button" class="btn btn-info btn-sm">删除</button></td>
+      </tr>
+    </table>
+
+
+
+  </div>
+</body>
+</html>
+<script src="jquery.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="vue.js"></script>
+<script>
+  window.onload = function(){
+    var c = new  Vue({ 
+      el:'#app',
+      data:{
+        name:'',
+        age:'',
+        arr:{
+          name:'苹果',
+          b:'香蕉',
+          c:'猕猴桃'
+          },
+        arr2:[33,54,'d']
+      },
+      methods:{
+        add:function (){
+          alert(2);
+        }
+      }
+    });
+  }
+</script>
